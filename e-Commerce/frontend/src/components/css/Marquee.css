@@ -1,0 +1,24 @@
+/* / Marquee Container / */
+.marquee-container {
+    background-color: #fcffb2; 
+    white-space: nowrap; 
+    position: relative;
+    overflow: hidden;
+  }
+  
+.marquee-content {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-text {
+  font-size: 1.5rem; 
+  font-weight: 600;
+  color: #212529; 
+  margin-right: 30px;
+}
+  
+.thunder-icon {
+  width: 20px; 
+  height: 20px;
+}
