@@ -6,21 +6,23 @@ import fashionImage1 from "../assets/fashion-slideshow-01.jpg";
 import fashionImage2 from "../assets/fashion-slideshow-02.jpg";
 import fashionImage3 from "../assets/fashion-slideshow-03.jpg";
 
+import { FaAngleRight } from "react-icons/fa6";
+
 const Hero = () => {
   return (
     <section className='hero-section position-relative'>   
     <Navbar />
     <div className="overlay-text-left text-white">
-            <div className="text-wrapper">
-            <h1 className="display-1 fw-bold">Glamorous Glam</h1>
-            <p className="d-none d-lg-block  mt-3">
+        <div className="mb-5">
+            <h1 className="display-1 text-dark">Glamorous<br />Glam</h1>
+            <p className="d-none d-md-block mt-2 text-para text-muted">
                 From casual to formal, we've got you covered.
             </p>
-            <button className="btn btn-dark btn-lg mt-4">
-            Shop collection &rarr;
+            <button className="btn text-white btn-lg mt-4 bg-black" >
+                Shop collection <FaAngleRight />
             </button>
-            </div>
         </div>
+    </div>
     <Carousel className='carousel ' controls={false} indicators={true} interval={2000}>    
         <Carousel.Item>
             <img className='object-fit-cover w-100 h-100' src={fashionImage1} alt="Fashion Slideshow 1" />

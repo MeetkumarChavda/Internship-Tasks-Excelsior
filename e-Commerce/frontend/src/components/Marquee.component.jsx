@@ -13,7 +13,7 @@ const Marquee = ({ dataText }) => {
         x: {
           repeat: Infinity, // Infinite loop
           repeatType: 'loop',
-          duration: 20, // Adjust the duration to control speed
+          duration: 10, // Adjust the duration to control speed
           ease: 'linear',
         },
       },

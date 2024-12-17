@@ -1,0 +1,8 @@
+/* Remove Bootstrap's default dropdown arrow */
+.nav-link::after {
+    display: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
