@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import UtilityBar from './components/UtilityBar';
-import Hero from './components/Hero.componet';
-import ShopByCategory from './components/ShopByCategory.component';
-import BestSeller from './components/BestSeller.component';
-import ShopLook from './components/ShopLook.component';
+import UtilityBar from './components/Navbar/UtilityBar';
+import Hero from './components/HeroSection/Hero.componet';
+import ShopByCategory from './components/Category/ShopByCategory.component';
+import BestSeller from './components/BestSeller/BestSeller.component';
+import ShopLook from './components/ShopLook/ShopLook.component';
+import Testimonials from './components/Feedback/Testimonials.component';
+import Brands from './components/ShopLook/Brands.component';
+import ShopGram from './components/ShopGram/ShopGram.component';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <ShopByCategory />
       <BestSeller />
       <ShopLook />
+      <Testimonials />
+      <Brands />
+      <ShopGram />
       
     </div>
   );
