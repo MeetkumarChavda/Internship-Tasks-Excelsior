@@ -1,0 +1,113 @@
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000; 
+    border-radius: 50%; 
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-prev {
+    left: 0px; 
+}
+
+.swiper-button-next {
+    right: 0px; 
+}
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #000;
+    color: #fff; 
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.image-container {
+    padding: 0;
+    margin: 0;
+}
+
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+
+.hotspot {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotspot span {
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 767px) {
+
+    .hotspot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hotspot span {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+
+.swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 50%;
+    margin: 0 5px; 
+    transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+    width: 13px; 
+    height: 13px;
+    background-color: white; 
+    border: 2px solid black; 
+    opacity: 1;
+    border-spacing: 5px;
+    transform: scale(1.2); 
+}
+
+.custom-popup {
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
