@@ -9,6 +9,7 @@ import Testimonials from './components/Feedback/Testimonials.component';
 import Brands from './components/ShopLook/Brands.component';
 import ShopGram from './components/ShopGram/ShopGram.component';
 import Footer from './components/Footer/Footer.component';
+import DontMiss from './components/modal/DontMiss.component';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       <Brands />
       <ShopGram />
       <Footer />
+
+      {/*  */}
+      <DontMiss />
     </div>
   );
 }

@@ -1,0 +1,110 @@
+.underline{
+    text-decoration: underline;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Custom Modal Width and Height */
+.custom-modal .modal-dialog {
+    max-width: 600px; /* Adjust the modal's width */
+    height: auto;
+  }
+  
+  .custom-modal .modal-content {
+    padding: 20px;
+    border-radius: 2px;
+  }
+  
+  /* Remove Line Under Header */
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  /* Bold Close Button */
+  .modal-header .btn-close {
+    font-weight: bold;
+  }
+  
+  /* Styling for Input Fields */
+  .form-control {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Styling for Login Button */
+  button.btn-dark {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+  }
+  .modal-header .btn-close:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /*  */
+
+  .reset-password-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reset-password-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .reset-password-info {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .cancel-link {
+    font-size: 14px;
+  }
+  
+  .reset-password-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .reset-password-btn:hover {
+    background-color: #333;
+  }
+
+
+  /* Style for input fields */
+.form-control {
+    border: 2px solid #ddd; /* Light grey border by default */
+    transition: all 0.3s ease-in-out; /* Smooth transition for border change */
+  }
+  
+  /* Style for focused input */
+  .form-control:focus {
+    outline: none; /* Remove default outline */
+    border: 3px solid black; /* Thicker black border */
+    box-shadow: none; /* Remove any other box-shadow */
+  }
+  
