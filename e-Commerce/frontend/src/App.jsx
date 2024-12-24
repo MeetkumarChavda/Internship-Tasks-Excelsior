@@ -8,6 +8,7 @@ import ShopLook from './components/ShopLook/ShopLook.component';
 import Testimonials from './components/Feedback/Testimonials.component';
 import Brands from './components/ShopLook/Brands.component';
 import ShopGram from './components/ShopGram/ShopGram.component';
+import Footer from './components/Footer/Footer.component';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Testimonials />
       <Brands />
       <ShopGram />
-      
+      <Footer />
     </div>
   );
 }
