@@ -1,0 +1,95 @@
+/* Remove default accordion styles */
+.accordion-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: inherit;
+    padding: 0.75rem 1rem;
+  }
+  
+  .accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color: transparent;
+  }
+  
+  .accordion-button:hover {
+    background-color: transparent;
+  }
+  
+  .accordion-button:active {
+    background-color: transparent;
+    color: inherit;
+  }
+  
+  .accordion-header {
+    border: none;
+  }
+  
+  .accordion-body {
+    border: none;
+    padding: 1rem;
+  }
+  
+  /* Remove blue highlight on focus */
+  .accordion-button:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Remove default hover and active effects */
+  .accordion-item {
+    border: none;
+  }
+  
+  .accordion-button::after {
+    display: none; /* Remove default arrow icon */
+  }
+  
+
+.btn-dark {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+
+/* Default (for mobile) */
+.icon-circle {
+    font-size: 2.2rem; /* Adjust this for mobile screens */
+  }
+  
+  /* For tablets and larger screens */
+  @media (min-width: 576px) {
+    .icon-circle {
+      font-size: 2.3rem; /* Adjust for tablet screens */
+    }
+  }
+  
+  /* For medium screens (laptops) */
+  @media (min-width: 768px) {
+    .icon-circle {
+      font-size: 2.5rem; /* Adjust for laptops */
+    }
+  }
+  
+ 
+  .line-space p {
+    margin-top: 20px;
+    line-height: 0.75; /* Reduces line spacing within the paragraph */
+  }
+
+  .footer-row {
+    /* display: flex; */
+     /* Allow wrapping on smaller screens */
+    align-items: start; /* Align all items to the top */
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column; /* Ensures content stacks vertically */
+    align-items: start;
+  }
