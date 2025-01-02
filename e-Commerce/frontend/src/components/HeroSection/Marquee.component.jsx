@@ -35,6 +35,14 @@ const Marquee = ({ dataText }) => {
         <img src={tIcon} alt="Thunder Icon" className="thunder-icon" />
         <span className="marquee-text">{marqeeText}</span>
       </div>
+      <div className="d-flex align-items-center gap-3 flex-nowrap me-5">
+        <img src={tIcon} alt="Thunder Icon" className="thunder-icon" />
+        <span className="marquee-text">{marqeeText}</span>
+      </div>
+       <div className="d-flex align-items-center gap-3 flex-nowrap me-5">
+        <img src={tIcon} alt="Thunder Icon" className="thunder-icon" />
+        <span className="marquee-text">{marqeeText}</span>
+      </div>
     </>
   );
 

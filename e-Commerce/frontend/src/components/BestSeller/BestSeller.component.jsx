@@ -6,15 +6,42 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FiShoppingBag } from "react-icons/fi";
 
 
+import ViewProduct from "../popUps/ViewProduct.component";
+
+
 const BestSeller = () => {
   const [selectedColors, setSelectedColors] = useState({}); // Track selected color for each product
   const [hoveredColor, setHoveredColor] = useState(null); // Track hovered color
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedCartProduct, setSelectedCartProduct] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showCartPopup, setShowCartPopup] = useState(false);
 
   const handleColorSelect = (productId, color) => {
     setSelectedColors((prevState) => ({
       ...prevState,
       [productId]: color, // Update the selected color for the product
     }));
+  };
+
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+    setShowPopup(true);
+  };
+
+  const handleCartProductClick = (product) => {
+    setSelectedCartProduct(product);
+    setShowCartPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    
+    setShowPopup(false);
+    setSelectedProduct(null);
+    setShowCartPopup(false);
+    setSelectedCartProduct(null);
   };
 
   const products = [
@@ -123,7 +150,7 @@ const BestSeller = () => {
                       } d-flex justify-content-center align-items-center gap-3 gap-lg-4`} 
                     >           
                       <div className="bg-white p-2 icon-container">
-                        <FiShoppingBag  size={"22px"}/>
+                        <FiShoppingBag  size={"22px"} onClick={() => handleCartProductClick(product)} />
                       </div>
                       <div className="bg-white p-2 icon-container d-none d-md-block">
                         <TbArrowsCross size={"22px"} />
@@ -132,7 +159,7 @@ const BestSeller = () => {
                         <FaRegHeart size={"22px"}/>
                       </div>
                       <div className="bg-white p-2 icon-container">
-                        <MdOutlineRemoveRedEye size={"22px"}/>
+                        <MdOutlineRemoveRedEye size={"22px"} onClick={() => handleProductClick(product)}/>
                       </div>
                     </div>
 
@@ -204,6 +231,23 @@ const BestSeller = () => {
           </div>
         </div>
       </div>
+
+      {selectedProduct &&
+        <ViewProduct
+          product={selectedProduct}
+          show={showPopup}
+          onClose={handleClosePopup}
+        />
+      }
+
+    {selectedCartProduct &&
+        <ViewProduct
+          product={selectedCartProduct}
+          showCart={showCartPopup}
+          onClose={handleClosePopup}
+        />
+      }
+
     </section>
   );
 };

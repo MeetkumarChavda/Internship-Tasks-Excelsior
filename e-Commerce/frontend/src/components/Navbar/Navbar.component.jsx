@@ -1,5 +1,5 @@
 import "../css/Navbar.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../../assets/logo.svg";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -8,9 +8,14 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { FiShoppingBag } from "react-icons/fi";
 import { FaRegUser, FaRegHeart, FaSearch } from "react-icons/fa";
 
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
 import Login from "../UserRegister/Login.component";
 import SignUp from "../UserRegister/SignUp.component";
 import ResetPwd from "../UserRegister/ResetPwd.component";
+import VerticalNavbar from "./VerticalNavbar.component";
+import SearchNav from "./SearchNav.component";
+import CartNav from "./CartNav.component";
 
 const Navbar = () => {
   const [modalState, setModalState] = useState({
@@ -18,16 +23,29 @@ const Navbar = () => {
     signup: false,
     resetPwd: false,
   });
+  const [showOffcanvas, setShowOffcanvas] = useState(false); // Offcanv
+  const [showSearchBar, setShowSearchBar] = useState(false); // Offcanvas SearchBar
+  const [showCart, setShowCart] = useState(false); // Offcanvas SearchBar
 
   const handleModalToggle = (modal, value) => {
     setModalState((prev) => ({ ...prev, [modal]: value }));
   };
 
+  const toggleOffcanvas = (option) => {
+    if(option.value ==='menu'){
+      setShowOffcanvas(!showOffcanvas); // Toggle Offcanvas visibility
+    }else if (option.value === 'search'){
+      setShowSearchBar(!showSearchBar); // Toggle SearchBar visibility
+    }else if (option.value === 'cart'){
+      setShowCart(!showCart); // Toggle showCart visibility
+    }
+  };
+  
   return (
     <>
-      <nav className="w-100 position-absolute z-1 d-flex px-3 py-2 py-lg-4 py-md-5 mt-1  justify-content-between align-items-center top-0">
-        <HiMenuAlt2 className="d-lg-none fs-2" />
-        <div className="ms-4 ms-lg-2 cursor-pointer">
+      <nav  className="w-100 position-absolute z-1 d-flex px-3 py-2 py-lg-4 py-md-5 mt-1  justify-content-between align-items-center top-0">
+      <HiMenuAlt2 className="d-lg-none fs-2" onClick={() => toggleOffcanvas({ value: 'menu' })} />
+      <div className="ms-4 ms-lg-2 cursor-pointer">
           <img src={logo} alt="logo" />
         </div>
 
@@ -129,16 +147,51 @@ const Navbar = () => {
         </div>
 
         <div className="d-flex gap-3 me-lg-4">
-          <FaSearch className="fs-4 cursor-pointer" />
+        <FaSearch className="fs-4 cursor-pointer" onClick={() => toggleOffcanvas({ value: 'search' })} />
+
           <FaRegUser
             className="d-none d-md-block fs-4 cursor-pointer"
             onClick={() => handleModalToggle("login", true)}
           />
           <FaRegHeart className="d-none d-md-block fs-4 cursor-pointer" />
-          <FiShoppingBag className="fs-4 cursor-pointer" />
+          <FiShoppingBag className="fs-4 cursor-pointer"onClick={() => toggleOffcanvas({ value: 'cart' })} />
         </div>
 
       </nav>
+
+       {/* Offcanvas component */}
+       <Offcanvas show={showOffcanvas} onHide={() => toggleOffcanvas({ value: 'menu' })} placement="start">
+       <Offcanvas.Header closeButton className="d-block">
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {/* Add the vertical navbar or any content you want in the offcanvas */}
+          <VerticalNavbar />
+        </Offcanvas.Body>
+      </Offcanvas>
+
+      <Offcanvas 
+        className="custom-offcanvas"
+        show={showSearchBar} onHide={() => toggleOffcanvas({ value: 'search' })} placement="end">
+       <Offcanvas.Header closeButton >
+        <Offcanvas.Title ><h3>Search our site</h3></Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          
+          <SearchNav />
+        </Offcanvas.Body>
+      </Offcanvas>
+
+
+      <Offcanvas 
+        className="custom-offcanvas"
+        show={showCart} onHide={() => toggleOffcanvas({ value: 'cart' })} placement="end">
+       <Offcanvas.Header closeButton >
+        <Offcanvas.Title ><h3>Shopping cart</h3></Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <CartNav />
+        </Offcanvas.Body>
+      </Offcanvas>
 
       {/* Modals */}
       <Login
@@ -171,7 +224,10 @@ const Navbar = () => {
           handleModalToggle("login", true);
         }}
       />
+
+      {/* <VerticalNavbar/> */}
     </>
+
   );
 };
 

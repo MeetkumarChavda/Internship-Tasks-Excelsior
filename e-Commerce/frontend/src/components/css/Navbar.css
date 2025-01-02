@@ -6,3 +6,45 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.nav-bar{
+    z-index: 1;
+}
+
+/*  */
+
+/* Ensure the offcanvas slides in from the left */
+.offcanvas-start {
+    left: 0;
+    right: auto;
+  }
+  
+  /* You can add other styles for the navbar, like background colors, etc. */
+  .offcanvas-body {
+    padding: 20px;
+  }
+  
+  .offcanvas-header {
+    background-color: #f8f9fa; /* Customize header */
+  }
+  
+  /* Optional: Custom close button styling */
+  .offcanvas-header .btn-close {
+    color: #000;
+    font-size: 1.5rem;
+  }
+  
+
+  /*  */
+
+  .custom-offcanvas {
+    width: 600px !important; /* Adjust width as needed */
+  }
+
+
+@media (max-width: 568px) {
+    .custom-offcanvas {
+      width: 350px !important; /* Adjust width as needed */
+    }
+  
+}

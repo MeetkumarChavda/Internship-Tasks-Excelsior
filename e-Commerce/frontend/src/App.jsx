@@ -1,31 +1,29 @@
-import React from 'react';
+// import React from 'react';
 import './App.css';
+
+import Home from './pages/Home';
+import { Routes, Route, } from "react-router-dom";
+// import WishList from './pages/wishList';
+
 import UtilityBar from './components/Navbar/UtilityBar';
-import Hero from './components/HeroSection/Hero.componet';
-import ShopByCategory from './components/Category/ShopByCategory.component';
-import BestSeller from './components/BestSeller/BestSeller.component';
-import ShopLook from './components/ShopLook/ShopLook.component';
-import Testimonials from './components/Feedback/Testimonials.component';
-import Brands from './components/ShopLook/Brands.component';
-import ShopGram from './components/ShopGram/ShopGram.component';
+
+
 import Footer from './components/Footer/Footer.component';
 import DontMiss from './components/modal/DontMiss.component';
+// import AdminHeroForm from './pages/AdminHeroForm';
+import AdminPanel from './pages/AdminPanel';
+// import Navbar from './components/Navbar/Navbar.component';
+
 
 function App() {
   return (
     <div>
-      <UtilityBar />
-      <Hero />
-      <ShopByCategory />
-      <BestSeller />
-      <ShopLook />
-      <Testimonials />
-      <Brands />
-      <ShopGram />
-      <Footer />
-
-      {/*  */}
-      <DontMiss />
+      
+       <Routes>
+          <Route path = '/' element= {<><UtilityBar /><Home /><DontMiss /> <Footer /></>} />
+          <Route path = '/admin' element= {<AdminPanel />} />
+       </Routes>
+      
     </div>
   );
 }

@@ -1,0 +1,175 @@
+/* Container for the entire section */
+.search-nav-container {
+    width: 100%;
+    max-width: 360px; /* Set a max-width for responsiveness */
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Style for the search input container */
+  .search-input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Input field style */
+  .search-input {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.5rem; /* Large font size */
+    border-radius: 50px; /* Rounded corners */
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border: 1px solid #333; /* Dark border on focus */
+    outline: none;
+  }
+  
+  /* Remove yellow border on active input */
+  .search-input:focus-visible {
+    outline: none;
+  }
+  
+  /* Search icon inside input */
+  .search-input::placeholder {
+    color: #aaa;
+    font-size: 1.2rem;
+  }
+  
+  .search-input-container::before {
+    content: '\f002'; /* FontAwesome search icon */
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #777;
+    pointer-events: none;
+  }
+  
+  /* Quick links title and items */
+  .quick-links-title, .inspiration-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .link-item {
+    font-size: 1.2rem;
+    padding: 8px 0;
+  }
+  
+  /* Inspiration section */
+  .inspiration-section .d-flex {
+    gap: 20px;
+  }
+  
+  .inspiration-item {
+    font-size: 1.2rem;
+    align-items: center;
+  }
+  
+  .inspiration-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .inspiration-price {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .inspiration-img {
+    border-radius: 10px;
+  }
+  
+  /* Mobile and tablet responsiveness */
+  @media (max-width: 768px) {
+    .search-nav-container {
+      padding: 15px;
+    }
+  
+    .search-input {
+      font-size: 1.2rem;
+      padding: 14px;
+    }
+  
+    .quick-links-title, .inspiration-title {
+      font-size: 1.3rem;
+    }
+  
+    .link-item {
+      font-size: 1rem;
+    }
+  
+    .inspiration-item {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-nav-container {
+      max-width: 100%;
+    }
+  
+    .search-input {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    .quick-links-title, .inspiration-title {
+      font-size: 1.2rem;
+    }
+  
+    .link-item {
+      font-size: 0.9rem;
+    }
+  
+    .inspiration-item {
+      font-size: 0.9rem;
+    }
+  }
+  /*  */
+
+  /* Styling for the search box */
+.search-nav-container .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px; /* Rounded box */
+    border: 1px solid #ccc; /* Border for the box */
+  }
+  
+  .search-nav-container .input-group-text {
+    /* align-items: center; */
+    /* display: none; */
+    background-color: transparent; /* Remove background color */
+    /* border: none; Remove button border */
+    /* padding: 0 20px; Adjust padding for the icon */
+  }
+  
+  .search-nav-container .form-control {
+    width: 100%;
+    padding: 1px 6px; /* Adjust padding for input */
+    font-size: 1.2rem; /* Larger font size */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Keep the rounded shape */
+  }
+  
+  .search-nav-container .form-control:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .search-nav-container .form-control::placeholder {
+    color: #aaa;
+  }
+  
